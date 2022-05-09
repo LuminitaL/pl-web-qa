@@ -1,0 +1,22 @@
+{
+  "name": "pl-web-qa",
+  "version": "1.0.0",
+  "description": "Automation test scripts for PeacyLoans",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuminitaL/pl-web-qa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuminitaL/pl-web-qa/issues"
+  },
+  "homepage": "https://github.com/LuminitaL/pl-web-qa#readme",
+  "dependencies": {
+    "cypress": "^9.6.1"
+  }
+}
