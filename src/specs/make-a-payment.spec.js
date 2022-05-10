@@ -1,8 +1,8 @@
 import { MakePaymentPO } from "../page-objects";
 import { paymentLocators } from "../locators";
-import { credentials } from "../data";
+import { credentials, messages } from "../data";
 
-describe("Make a payment: verify if customer is able to make a loan payment ", () => {
+describe("Make a payment: verify if customer is not able to make a loan payment ", () => {
   let makePaymentPO = null;
 
   beforeEach(() => {
@@ -10,7 +10,7 @@ describe("Make a payment: verify if customer is able to make a loan payment ", (
     makePaymentPO.navigateTo();
   });
 
-  it("should be able to make a loan payment", () => {
+  it("should not be able to make a loan payment", () => {
     makePaymentPO.type(paymentLocators.child(1), credentials.email);
     makePaymentPO.type(paymentLocators.child(2), credentials.password);
     makePaymentPO.click(paymentLocators.submit);
@@ -29,5 +29,8 @@ describe("Make a payment: verify if customer is able to make a loan payment ", (
     makePaymentPO.click(paymentLocators.submit);
 
     expect(makePaymentPO.should(paymentLocators.messageLabel, "be.visible"));
+    expect(
+      makePaymentPO.contains(paymentLocators.messageLabel, messages.fails.less)
+    );
   });
 });
