@@ -77,4 +77,16 @@ export class MakePaymentPO {
   clickOnChildren(locator, index) {
     cy.get(locator).children().eq(index).click();
   }
+
+  /**
+   * @name contains
+   * @description
+   * DOM elements should contain the text
+   *
+   * @param {string} locator Locator of needed element.
+   * @param {string} value Value to assert against locator.
+   */
+  contains(locator, value) {
+    cy.get(locator).contains(value);
+  }
 }
